@@ -1,0 +1,84 @@
+
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header" style="text-align: center;">
+          <h5 class="title">Register</h5>
+        </div>
+        <div class="card-body">
+          <div class="danger" *ngIf="isRegisterError" style="text-align: center; color:red; border-color:red; font-weight:bold;font-size:18px;">
+            <p>
+                {{ registerErrorMessage }}
+            </p>
+        </div>
+        <div *ngIf="registerSuccess" style="text-align: center; color:rgb(0, 199, 50); border-color:rgb(0, 199, 50); font-weight:bold;font-size:18px;">
+          <p>
+              You are registred successfully !
+          </p>
+      </div>
+          <form>
+            <div class="row">
+                
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">First Name</label>
+                    <input name="firstname" id="firstname" type="text" (input)="user.firstname = $event.target.value" class="form-control" placeholder="First Name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">Last Name</label>
+                      <input name="lastname" id="lastname" type="text" (input)="user.lastname = $event.target.value" class="form-control" placeholder="Last Name">
+                    </div>
+                  </div>
+                
+              </div>
+            <div class="row">
+                
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input name="email" id="email" type="email" (input)="user.email = $event.target.value" class="form-control" placeholder="Email">
+                </div>
+              </div>
+              
+            </div>
+            <div class="row">
+                
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control" (input)="user.password = $event.target.value" placeholder="Password">
+                </div>
+              </div>
+              
+            </div>
+            <div class="row">
+                
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Confirm password</label>
+                    <input type="password" class="form-control" (input)="confirmPassword = $event.target.value" placeholder="Confirm password">
+                  </div>
+                </div>
+                
+              </div>
+
+            <div class="row" style="text-align: center;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input id="submit-btn" type="button" class="form-control" value="Register" style="background-color: rgb(27, 27, 27); color: aliceblue; height: 40px;" (click)="register()">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

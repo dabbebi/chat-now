@@ -1,0 +1,70 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+
+    <div class="row">
+     
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="title">Settings</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="title">Change password</h5>
+              <p class="success" *ngIf="this.success">
+                  Your password have been changed successfuly !
+              </p>
+              <p class="error" *ngIf="this.entererror">
+                  You must enter all fields !
+              </p>
+              <p class="error" *ngIf="this.confirmerror">
+                  You must confirm your password !
+            </p>
+            <p class="error" *ngIf="this.passinvalid">
+                Invalid password !
+          </p>
+            </div>
+            <div class="card-body">
+              
+              <form>
+                <div class="row">
+                    
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input name="old" id="old" type="password" class="form-control" (input)="this.oldpass = $event.target.value" placeholder="Old password">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input name="new" id="new" type="password"  (input)="this.newpass = $event.target.value" class="form-control" placeholder="New password">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input name="conf" id="conf" type="password" (input)="this.confirmpass = $event.target.value" class="form-control" placeholder="Confirm new password">
+                    </div>
+                  </div>
+    
+                  <div class="col-md-12" style="text-align: center;">
+                    <input id="submit-btn" type="button" (click)="this.changePassword();" class="form-control" value="Save changes" style="background-color: rgb(27, 27, 27); color: aliceblue; height: 50px;" >
+                </div>
+                  
+                </div>
+                
+    
+                
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+</div>

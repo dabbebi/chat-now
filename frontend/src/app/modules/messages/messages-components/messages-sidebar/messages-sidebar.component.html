@@ -1,0 +1,33 @@
+
+<div class="logo">
+    <a class="simple-text logo-mini">
+      <div class="logo-img">
+          <img src="./assets/img/angular2-logo-white.png"/>
+      </div>
+    </a>
+    <a class="simple-text logo-normal">
+        Messenger
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a href="{{ menuItem.path }}" style="display: flex; flex-direction: row;">
+                <div style="text-align: center;">
+                    <i class="now-ui-icons {{menuItem.icon}}" style="font-size: 34px;"></i>
+                </div>
+                <div>
+                    <p style="font-size: 13px; margin: 0%; line-height: 16px; font-weight: normal;">
+                        {{menuItem.title}}
+                        <br>
+                        <span style="color: rgb(97, 97, 97); font-size: 10px; margin: 0%;">{{ menuItem.message }}</span>
+                    </p>
+                    
+                </div>
+                
+            </a>
+            
+        </li>
+        
+    </ul>
+</div>

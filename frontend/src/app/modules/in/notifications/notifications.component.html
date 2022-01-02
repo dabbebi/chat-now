@@ -1,0 +1,165 @@
+<div class="panel-header panel-header-sm">
+</div>
+
+<div class="main-content">
+    <div class="row">
+     
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="title">Notifications ( {{ this.notifications.length }} )</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngFor="let notif of notifications">
+     
+        <div class="col-md-12" *ngIf="notif.type == 'accept'">
+          <div class="card">
+            <div class="card-body" *ngIf="notif.seen == 'false'" style="background-color: rgb(206, 232, 255);">
+                <div class="row" style="padding-bottom: 0%;">
+                  <div class="col-md-9" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+                      <a [routerLink]="['/in/profile', notif.id]" >
+                          <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+                      </a>
+                      <h5 class="title" style="margin-left: 7px;">
+                          {{ notif.name }} <span style="font-size: 15px;">Accepted your invitation</span><br>
+                          <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+                      </h5>
+                  </div>
+                  <div class="col-md-3" style="text-align: center;">
+                    <a [routerLink]="['/messages', notif.id]">
+                      <button class="btn btn-default btn-round">
+                          <i class="now-ui-icons ui-2_chat-round"></i>
+                          Chat
+                      </button>
+                    </a>
+                </div>
+            </div>
+          </div>
+          <div class="card-body" *ngIf="notif.seen == 'true'">
+            <div class="row" style="padding-bottom: 0%;">
+              <div class="col-md-9" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+                  <a href="">
+                      <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+                  </a>
+                  <h5 style="margin-left: 7px;">
+                    {{ notif.name }} <span style="font-size: 15px;">Accepted your invitation</span><br>
+                    <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+                </h5>
+              </div>
+              <div class="col-md-3" style="text-align: center;">
+                <a [routerLink]="['/messages', notif.id]">
+                  <button class="btn btn-default btn-round">
+                      <i class="now-ui-icons ui-2_chat-round"></i>
+                      Chat
+                  </button>
+                </a>
+            </div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12" *ngIf="notif.type == 'like'">
+        <div class="card">
+          <div class="card-body" *ngIf="notif.seen == 'false'" style="background-color: rgb(206, 232, 255);">
+              <div class="row" style="padding-bottom: 0%;">
+                <div class="col-md-12" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+                    <a [routerLink]="['/in/profile', notif.id]" >
+                        <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+                    </a>
+                    <h5 class="title" style="margin-left: 7px;">
+                        {{ notif.name }} <span style="font-size: 15px;">Likes your post</span><br>
+                        <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+                    </h5>
+                </div>
+                
+          </div>
+        </div>
+        <div class="card-body" *ngIf="notif.seen == 'true'">
+          <div class="row" style="padding-bottom: 0%;">
+            <div class="col-md-12" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+                <a href="">
+                    <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+                </a>
+                <h5 style="margin-left: 7px;">
+                  {{ notif.name }} <span style="font-size: 15px;">Likes your post</span><br>
+                  <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+              </h5>
+            </div>
+            
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="col-md-12" *ngIf="notif.type == 'love'">
+      <div class="card">
+        <div class="card-body" *ngIf="notif.seen == 'false'" style="background-color: rgb(206, 232, 255);">
+            <div class="row" style="padding-bottom: 0%;">
+              <div class="col-md-12" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+                  <a [routerLink]="['/in/profile', notif.id]" >
+                      <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+                  </a>
+                  <h5 class="title" style="margin-left: 7px;">
+                      {{ notif.name }} <span style="font-size: 15px;">Loves your post</span><br>
+                      <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+                  </h5>
+              </div>
+              
+        </div>
+      </div>
+      <div class="card-body" *ngIf="notif.seen == 'true'">
+        <div class="row" style="padding-bottom: 0%;">
+          <div class="col-md-12" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+              <a href="">
+                  <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+              </a>
+              <h5 style="margin-left: 7px;">
+                {{ notif.name }} <span style="font-size: 15px;">Loves your post</span><br>
+                <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+            </h5>
+          </div>
+          
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="col-md-12" *ngIf="notif.type == 'comment'">
+    <div class="card">
+      <div class="card-body" *ngIf="notif.seen == 'false'" style="background-color: rgb(206, 232, 255);">
+          <div class="row" style="padding-bottom: 0%;">
+            <div class="col-md-12" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+                <a [routerLink]="['/in/profile', notif.id]" >
+                    <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+                </a>
+                <h5 class="title" style="margin-left: 7px;">
+                    {{ notif.name }} <span style="font-size: 15px;">Commented your post</span><br>
+                    <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+                </h5>
+            </div>
+            
+      </div>
+    </div>
+    <div class="card-body" *ngIf="notif.seen == 'true'">
+      <div class="row" style="padding-bottom: 0%;">
+        <div class="col-md-12" style="display: flex; flex-direction: row; padding-bottom: 0%; margin-bottom: 0%;">
+            <a href="">
+                <img src="../../../../assets/img/profile.JPG" alt="" srcset="" style="border-radius: 50%; height: 55px; width: auto; margin-top: 7px;">
+            </a>
+            <h5 style="margin-left: 7px;">
+              {{ notif.name }} <span style="font-size: 15px;">Commented your post</span><br>
+              <p style="color: gray; font-size: 12px; margin-bottom:  0px !important;">{{ notif.date }}</p>
+          </h5>
+        </div>
+        
+  </div>
+</div>
+  </div>
+</div>
+
+</div>

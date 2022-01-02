@@ -1,0 +1,96 @@
+
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+   
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Search</h5>
+        </div>
+        <div class="card-body">
+          
+          <form>
+            <div class="row">
+                
+              <div class="col-md-10">
+                <div class="form-group">
+                  <input name="search" id="search" type="text" class="form-control" (input)="info = $event.target.value" [value]="info" placeholder="Search for friends ..." style="border: 1px solid; border-radius: 25px; height: 50px;">
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <button id="submit-btn" type="button" class="form-control" (click)="search()" style="background-color: rgb(27, 27, 27); color: aliceblue; height: 50px;" >Search</button>
+            </div>
+              
+            </div>
+            
+
+            
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let user of result">
+      <div class="card card-user" style="height: 360px !important;">
+        <div class="image">
+          <img src="../../../../assets/img/header.jpg" alt="...">
+        </div>
+        <div class="card-body" >
+          <div class="author">
+            <a [routerLink]="['/in/profile', user.id]" >
+              <img class="avatar border-gray" src="../../../../assets/img/profile.JPG" alt="...">
+              <h5 class="title">{{ user.name }}</h5>
+            </a>
+          </div>
+          <div *ngIf="user.status == 'invi'" style="text-align: center; display: flex; flex-direction: row;">
+            <button class="btn btn-success btn-round" (click)="acceptInvitation(user.id, user.name);">
+              <i class="now-ui-icons ui-1_check"></i>
+              Accept
+          </button>
+          <button class="btn btn-danger btn-round" (click)="deleteInvitation(user.id);">
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+            Delete
+        </button>
+          </div>
+          <div *ngIf="user.status == 'pending'" style="text-align: center;">
+            <button class="btn btn-warning btn-round" (click)="cancelInvitation(user.id);">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+              Cancel
+          </button>
+          </div>
+          <div *ngIf="user.status == 'friend'" style="text-align: center;">
+            <a [routerLink]="['/messages', user.id]">
+            <button class="btn btn-default btn-round">
+              <i class="now-ui-icons ui-2_chat-round"></i>
+              Chat
+          </button>
+        </a>
+          </div>
+          <div *ngIf="user.status == 'user'" style="text-align: center;">
+            <button class="btn btn-info btn-round" (click)="sendInvitation(user.id, user.name);">
+              <i class="now-ui-icons ui-1_simple-add"></i>
+              Add
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="this.noResult">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body" style="text-align: center;">
+          <span style="color: black; font-size: 18px;">No results for "{{ this.info2 }}" !</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

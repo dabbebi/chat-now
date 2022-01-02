@@ -1,0 +1,55 @@
+.spec {
+    height: 60px;
+    background: #2c2c2c;
+    background: linear-gradient(160deg,#2c2c2c 0%,#1f1f1f 100%);
+    background-size: 105%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+
+.hismessage {
+    color: aliceblue;
+    background-color: #2c2c2c;
+    border-radius: 18px;
+    padding: 7px;
+    margin-left: 20px;
+    margin: 4px;
+    max-width: 75%;
+}
+
+.mymessage {
+    font-size: 14px;
+    color: aliceblue;
+    background: linear-gradient(#2451a5, #721bfd);
+    border-radius: 18px;
+    padding: 8px;
+    margin-right: 20px;
+    margin-left: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    max-width: 75%;
+}
+
+.hismessagenow {
+    color: aliceblue;
+    background-color: #999999;
+    border-radius: 18px;
+    padding: 7px;
+    margin-left: 20px;
+    margin: 4px;
+    max-width: 75%;
+}
+
+.mymessagenow {
+    font-size: 14px;
+    color: aliceblue;
+    background: linear-gradient(#a3bbe7, #c9aef5);
+    border-radius: 18px;
+    padding: 8px;
+    margin-right: 20px;
+    margin-left: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    max-width: 75%;
+}

@@ -1,0 +1,48 @@
+<div class="spec">
+</div>
+<div *ngIf="this.chatpage">
+    
+    <div class="row" style="height: calc(100vh - 136px); display:flex; flex-direction :column;overflow-x: hidden;flex-wrap: wrap; flex-flow: column-reverse wrap;">
+        <div class="col-md-1" *ngIf="this.mobile == false"></div>
+        <div class="col-md-10">
+            <div class="row" *ngFor="let message of messages">
+                <div class="mymessage" *ngIf="message.idsender == this.myid">
+                    {{ message.content }}
+                </div>
+                <div *ngIf="message.idsender == this.id" style="display: flex; flex-direction: row;">
+                    <div>
+                        <i class="now-ui-icons users_circle-08" style="font-size: 26px; margin-left: 16px;"></i>
+                    </div>
+                    <div class="hismessage">
+                        {{ message.content }}
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-1" *ngIf="this.mobile == false"></div>
+            <div class="row">
+                <div *ngIf="this.typed != ''" style="display: flex; flex-direction: row;">
+                    <div>
+                        <i class="now-ui-icons users_circle-08" style="font-size: 26px; margin-left: 16px;"></i>
+                    </div>
+                    <div class="hismessagenow">
+                        {{ this.typed }}
+                    </div>
+                </div>
+                <div class="mymessagenow" *ngIf="this.content != ''">
+                    {{ this.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" style="position: relative; margin-bottom: 4px; margin-top: auto;">
+            <div class="col-md-1"></div>      
+            <div class="col-md-10" style="display: flex; flex-direction: row;">
+                <input name="message" id="message" (input)="this.content = $event.target.value; this.writeMessage();" [value]="this.content" type="text" class="form-control" placeholder="Write a message ..." style="border: 1px solid; border-radius: 25px; height: 50px; width: 90%;">
+                <button id="submit-btn" type="submit" class="form-control" (click)="this.sendMessage();" style="background-color: rgb(27, 27, 27); color: aliceblue; height: 50px; width: 10%;" >
+                    <i class="now-ui-icons ui-1_send"></i>
+                </button>
+            </div>
+      </div>
+</div>
